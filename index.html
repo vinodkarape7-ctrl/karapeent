@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karape Enterprises | Carbon Fiber Product Manufacturing</title>
+    <style>
+        /* Base Styles & Theme Colors - Premium Navy Blue */
+        :root {
+            --bg-color: #0B192C; /* Premium Dark Navy Blue */
+            --card-bg: #1E3E62; /* Medium Navy Blue for containers */
+            --accent-color: #008DDA; /* Electric Blue accent highlight */
+            --highlight-color: #41C9E2;/* Vibrant light blue for focused headers */
+            --youtube-red: #FF0000; /* YouTube Branding Accent */
+            --text-light: #ffffff;
+            --text-muted: #E6FFFD;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* Header & Navigation Styling */
+        header {
+            background: linear-gradient(135deg, #001C30 0%, #0B192C 100%);
+            border-bottom: 3px solid var(--accent-color);
+            padding: 20px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .brand-name {
+            font-size: 2.5rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            color: var(--text-light);
+        }
+
+        .brand-tagline {
+            font-size: 1.1rem;
+            color: var(--highlight-color);
+            margin-top: 5px;
+            text-transform: uppercase;
+            font-weight: 600;
+            letter-spacing: 2px;
+        }
+
+        nav {
+            margin-top: 20px;
+        }
+
+        nav a {
+            color: var(--text-light);
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--highlight-color);
+        }
+
+        /* Section Layouts */
+        section {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 20px;
+            scroll-margin-top: 140px; /* Offset for sticky header */
+            display: block;
+            clear: both;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+            text-transform: uppercase;
+        }
+
+        h2::after {
+            content: '';
+            display: block;
+            width: 50%;
+            height: 3px;
+            background-color: var(--accent-color);
+            margin-top: 8px;
+        }
+
+        /* About Us Section */
+        .about-content {
+            background-color: var(--card-bg);
+            padding: 40px;
+            border-radius: 8px;
+            border-left: 5px solid var(--accent-color);
+            font-size: 1.1rem;
+            color: var(--text-muted);
+        }
+
+        /* Product Details Section */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .product-card {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            padding: 25px;
+            transition: transform 0.3s ease;
+            border: 1px solid #2A527A;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--highlight-color);
+        }
+
+        .product-card h3 {
+            color: var(--highlight-color);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .product-card p {
+            color: var(--text-muted);
+        }
+
+        /* Image Gallery Grid Options */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .gallery-item {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            border: 1px solid #2A527A;
+            padding: 15px;
+            text-align: center;
+            transition: border-color 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            border-color: var(--highlight-color);
+        }
+
+        .gallery-img-box {
+            width: 100%;
+            height: 320px;
+            background-color: #0b192c;
+            border-radius: 6px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .gallery-img-box img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            padding: 10px;
+        }
+
+        .gallery-caption {
+            margin-top: 15px;
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--highlight-color);
+        }
+
+        /* Contact Details Section */
+        .contact-container {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            padding: 40px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            border: 1px solid #2A527A;
+        }
+
+        .contact-info h3 {
+            color: var(--highlight-color);
+            margin-bottom: 10px;
+        }
+
+        .contact-info p {
+            color: var(--text-muted);
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        .contact-info h3 + p + p + p {
+            margin-bottom: 0;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #001C30;
+            text-align: center;
+            padding: 30px;
+            margin-top: 80px;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            border-top: 1px solid #2A527A;
+        }
+
+        /* Responsive Design adjusts */
+        @media (max-width: 768px) {
+            .brand-name { font-size: 2rem; }
+            nav a { margin: 5px 10px; display: inline-block; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Block -->
+    <header>
+        <div class="header-container">
+            <h1 class="brand-name">Karape Enterprises</h1>
+            <div class="brand-tagline">Carbon Fiber Product Manufacturing and Supplier</div>
+            <nav>
+                <a href="#about">About Us</a>
+                <a href="#products">Product Details</a>
+                <a href="#gallery">Image Gallery</a>
+                <a href="#contact">Contact Details</a>
+                <a href="https://youtube.com" target="_blank">Video Gallery ↗</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- About Us Section -->
+    <section id="about">
+        <h2>About Us</h2>
+        <div class="about-content">
+            <p>From the year <strong>2018</strong>, we are deeply committed to manufacturing high-quality carbon fiber tubes and custom components built explicitly as per unique customer requirements.</p>
+            <br>
+            <p>Leveraging the ultra-lightweight and extreme durability properties of advanced carbon composites, we engineering-tailor items built to excel. We proudly provide reliable, high-performance product lineups serving the <strong>agriculture sector</strong>, comprehensive <strong>industrial cleaning work</strong>, and various specialized industrial applications.</p>
+        </div>
+    </section>
+
+    <!-- Product Details Section -->
+    <section id="products">
+        <h2>Product Details</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <h3>60-Foot Telescopic Harvesting Poles</h3>
+                <p>Ultra-rigid, lightweight carbon fiber telescopic poles designed specifically for agriculture. Reaches up to 60 feet high with minimal bend, making it perfect for tall crop harvesting like Arecanut (Supari) and coconut trees.</p>
+            </div>
+            <div class="product-card">
+                <h3>Tactical Pole </h3>
+                <p>Corrosion-resistant, heavy-duty pipes  tailored to handel Tactical operation, Animal rescue.</p>
+            </div>
+            <div class="product-card">
+                <h3>Industrial Cleaning Poles</h3>
+                <p>Ultra-rigid interlocking carbon fiber pole setups specifically built to support extensive reach requirements for industrial pressure washing and window cleaning.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- New Image Gallery Section -->
+    <section id="gallery">
+        <h2>Product Image Gallery</h2>
+        <div class="gallery-grid">
+            
+            <!-- Item 1 -->
+            <div class="gallery-item">
+                <div class="gallery-img-box">
+                    <img src="pole.png" alt="Arecanut , coconut harvesting and prunnering pole ">
+                </div>
+                <div class="gallery-caption">Harvesting pole</div>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="gallery-item">
+                <div class="gallery-img-box">
+                    <img src="pole1.png" alt="Tactical Pole ">
+                </div>
+                <div class="gallery-caption">"Tactical Pole" </div>
+            </div>
+
+            <!-- Item 3 -->
+            <div class="gallery-item">
+                <div class="gallery-img-box">
+                    <img src="pole3.png" alt="clianing pipe or suction tube">
+                </div>
+                <div class="gallery-caption">customised tube according to industrial need </div>
+            </div>
